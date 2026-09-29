@@ -96,6 +96,12 @@
     </inertial>
   </link>
 
+  <joint name="first_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="body_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
   <link name="tip_link">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -108,12 +114,6 @@
       <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
     </inertial>
   </link>
-
-  <joint name="first_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="body_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint>
 
   <!-- The only moving joint: the shoulder. -->
   <joint name="motor_joint" type="continuous">
